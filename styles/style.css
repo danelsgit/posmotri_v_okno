@@ -59,18 +59,18 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  margin-top: 78px;
+  margin-top: 70px;
 }
 
 .result__video-container {
-  width: 711px;
-  height: 386px;
-  margin: 0;
-  background: #545050;
+  position: relative;
 }
+
 .result__video {
   width: 711px;
-  height: auto;
+  height: 386px;
+  object-fit: cover;
+  object-position: 100%;
 }
 
 .search-form {
@@ -80,7 +80,6 @@ ol {
   justify-content: space-between;
   align-items: flex-start;
   width: 711px;
-  height: 54px;
 }
 
 .search-form__fieldset {
@@ -141,10 +140,10 @@ ol {
   line-height: normal;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover {
   text-decoration: underline;
 }
-
+/* валидатор выдает ошибку только тут с :has(:focus-visible)*/
 .search-form__label:has(:focus-visible) {
   outline: #fff 1px solid;
   outline-offset: 2px;
@@ -159,12 +158,15 @@ ol {
   background-color: transparent;
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
-  width: 19px;
-  height: 19px;
+input[type="checkbox"]:checked + .search-form__pseudo-checkbox:before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
   outline: #000 1px solid;
-  outline-offset: -2px;
-  background-color: #fff;
+  outline-offset: -1px;
+  overflow: hidden;
+  background: #fff;
 }
 
 .button {
@@ -173,7 +175,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
   align-items: center;
   gap: 10px;
   width: 194px;
-  height: 34px;
+  min-height: 34px;
   margin-top: 20px;
   border: 1px solid #fff;
   color: #fff;
@@ -230,6 +232,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
 }
 
 .content__list {
+  position: relative;
   display: grid;
   align-items: flex-start;
   gap: 30px;
@@ -257,7 +260,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox {
   outline: 0;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
 
