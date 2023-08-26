@@ -16,13 +16,13 @@ const preloaderTmp = document.querySelector('.preloader-template');
 const videoNotFoundTmp = document.querySelector('.error-template');
 const moreButtonTmp = document.querySelector('.more-button-template');
 
+
 /* МЕХАНИКА */
 
 // Нужен для работы с переключателями
 let cardsOnPageState = [];
 
 // Первая загрузка ✅
-
 showPreloader(preloaderTmp, videoContainer);
 showPreloader(preloaderTmp, cardsContainer);
 mainMechanics(endpoint);
